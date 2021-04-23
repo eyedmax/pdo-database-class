@@ -773,6 +773,16 @@ class PDODb
     }
 
     /**
+     * Returns current error status
+     * @return bool
+     */
+    public function isError()
+    {
+        $err_code = $this->getLastErrorCode();
+        return ($err_code && $err_code !== '00000');
+    }
+
+    /**
      * Method returns db error
      *
      * @return string
