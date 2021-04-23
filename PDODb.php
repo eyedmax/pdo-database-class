@@ -1338,7 +1338,7 @@ class PDODb
         $result = $this->rawQuery($query, $params);
 
         if ($this->useGenerator) {
-            return $result->current() ? $result->current() : false;
+            return $result->current() ?: false;
         } else {
             return $result ? $result[0] : false;
         }
